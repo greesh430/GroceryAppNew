@@ -1,1 +1,10 @@
 /target/
+/.settings/
+
+
+/test-output/
+
+
+/extent-reports/
+
+/OutputScreenShot/
