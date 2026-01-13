@@ -12,16 +12,12 @@ public class LoginPage {
 	@FindBy(name="username")WebElement usernamefield;
 	@FindBy(name="password")WebElement passwordfield;
 	@FindBy(xpath="//button[@type='submit']")WebElement loginbuttonfield;
-	@FindBy(xpath="//p[text()='Dashboard'])")WebElement dashBoard;
+	@FindBy(xpath = "//p[text()='Dashboard']")WebElement dashBoard;
 	@FindBy(xpath="//div[contains(@class,'alert-dismissible')]")WebElement alertmessage;
 	
-//	public LoginPage(WebDriver driver) {
-//		this.driver=driver;
-//		PageFactory.initElements(driver, this);	
-//	}
 
-	public LoginPage(WebDriver driver) {
-		//super();
+	public LoginPage(WebDriver driver) 
+	{	
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}

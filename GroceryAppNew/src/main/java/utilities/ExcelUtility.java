@@ -30,7 +30,7 @@ public class ExcelUtility {
 		String filePath = Constant.TESTDATAFILE;
 		f = new FileInputStream(filePath);
 		w = new XSSFWorkbook(f);
-		sh = w.getSheet("sheet");
+		sh = w.getSheet(sheet);
 		XSSFRow r = sh.getRow(row);
 		XSSFCell c = r.getCell(col);
 		int val =   (int) c.getNumericCellValue();  
