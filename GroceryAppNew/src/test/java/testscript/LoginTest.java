@@ -14,7 +14,7 @@ import utilities.ExcelUtility;
 
 public class LoginTest extends Base {
 	
-	@Test(priority=1)
+	@Test(priority=1, groups={"regression"},retryAnalyzer=retry.Retry.class)
 	
 	public void verifyIfUserAbleToLoginUsingValidUsernameValidPassword() throws IOException
 	{

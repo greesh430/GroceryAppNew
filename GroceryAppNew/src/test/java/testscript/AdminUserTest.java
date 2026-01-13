@@ -1,6 +1,7 @@
 package testscript;
 
 import java.io.IOException;
+import java.time.LocalDateTime;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -30,7 +31,7 @@ public class AdminUserTest extends Base {
 		
 		AdminUserPage adminuser = new AdminUserPage(driver);
 		FakerUtility fakerutility=new FakerUtility();
-		String uname=fakerutility.createARandomFirstname();
+		String uname=fakerutility.createARandomFirstname()+LocalDateTime.now();
 		String pwrd=fakerutility.createARandomLastName();
         adminuser.adminUserMoreInfo();
         adminuser.addNewButtonClick();
