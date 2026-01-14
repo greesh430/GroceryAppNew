@@ -28,37 +28,43 @@ public class AdminUserPage {
 		PageFactory.initElements(driver, this);
 	}
 	
-	public void adminUserMoreInfo()
+	public AdminUserPage adminUserMoreInfo()
 	{
 		adminusermoreinfo.click();
+		return this;
 	}
 	
-	public void addNewButtonClick()
+	public AdminUserPage addNewButtonClick()
 	{
 		addnewbuttonclick.click();
+		return this;
 	}
 	
-	public void enterNewUserName(String uname)
+	public AdminUserPage enterNewUserName(String uname)
 	{
 		newUserUsername.sendKeys(uname);
+		return this;
 	}
 	
-	public void enterNewPassword(String pwrd)
+	public AdminUserPage enterNewPassword(String pwrd)
 	{
 		newUserPassword.sendKeys(pwrd);
+		return this;
 	}
 	
-	public void enterUserType()
+	public AdminUserPage enterUserType()
 	{
 //		Select drop = new Select(userTypeDropdown);
 //        drop.selectByIndex(1);
 		PageUtility pageutility = new PageUtility();
 		pageutility.selectByIndexMethod(userTypeDropdown, 1);
+		return this;
 	}
 	
-	public void saveButton()
+	public AdminUserPage saveButtonClick()
 	{
 		saveButton.click();
+		return this;
 	}
 	
 	public boolean isAlertDisplayed() {

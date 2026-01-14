@@ -29,21 +29,23 @@ public class ManageCategoryPage {
 		PageFactory.initElements(driver, this);
 	}
 	
-	public void manageCategoryMoreInfo()
+	public ManageCategoryPage manageCategoryMoreInfo()
 	{
 		PageUtility pageutility=new PageUtility();
     	pageutility.clickUsingJavaScript(driver, managecategorymoreinfobutton);
+    	return this;
 		//managecategorymoreinfobutton.click();
 	}
 
-	public void manageCategoryNew()
+	public ManageCategoryPage manageCategoryNew()
 	{
 		PageUtility pageutility=new PageUtility();
     	pageutility.clickUsingJavaScript(driver, managecategorynewbutton);
+    	return this;
 		//managecategorynewbutton.click();
 	}
 	
-	public void enterCategoryName(String FruitsCategory) throws AWTException 
+	public ManageCategoryPage enterCategoryName(String FruitsCategory) throws AWTException 
 	{
         categorynamefield.sendKeys(FruitsCategory);
         groupnamefield.click();
@@ -52,12 +54,14 @@ public class ManageCategoryPage {
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("arguments[0].click();", choosefilefield);
         fileuploadutility.fileUploadUsingRobotclass(choosefilefield, Constant.IMAGEFILE);	
+        return this;
     }
 	
-	public void enterSave()
+	public ManageCategoryPage enterSave()
 	{
 		PageUtility pageutility=new PageUtility();
     	pageutility.clickUsingJavaScript(driver, savebuttonfield);
+    	return this;
 		//savebuttonfield.click();
 	}
 	

@@ -7,5 +7,6 @@ public class Constant {
 	public static final String LOGINVALIDCREDENTIALS = "Error occured:Unable to navigate to Homepage using given username&password";
 	public static final String LOGOUTERROR="Error occured:Logout unsuccessful";
 	public static final String ALERTNOTDISPLAYED ="Error occured: Alert not displayed";
+	public static final String CONFIGFILE= System.getProperty("user.dir") + "\\src\\main\\resources\\config.properties";
 
 }

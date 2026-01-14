@@ -28,37 +28,42 @@ public class ManageFooterPage {
 		PageFactory.initElements(driver, this);
 	}
 	
-	public void manageFooterMoreInfo()
+	public ManageFooterPage manageFooterMoreInfo()
 	{
 		PageUtility pageutility=new PageUtility();
     	pageutility.clickUsingJavaScript(driver, managefootermoreinfo); 
+    	return this;
 		//managefootermoreinfo.click();
 	}
 
-	public void manageFooterEdit()
+	public ManageFooterPage manageFooterEdit()
 	{	
 		PageUtility pageutility=new PageUtility();
     	pageutility.clickUsingJavaScript(driver, managefooteredit); 
+    	return this;
         //managefooteredit.click();
 	}
 
-    public void updateEmail(String email) 
+    public ManageFooterPage updateEmail(String email) 
     {        
         emailField.clear();
         emailField.sendKeys(email);
+        return this;
     }
 
-    public void updatePhone(String phone) 
+    public ManageFooterPage updatePhone(String phone) 
     {        
         phoneField.clear();
         phoneField.sendKeys(phone);
+        return this;
     }
 
-    public void clickUpdateButton() 
+    public ManageFooterPage clickUpdateButton() 
     {
     	PageUtility pageutility=new PageUtility();
     	pageutility.scrollUsingJavaScript(driver, updateButton);
     	pageutility.clickUsingJavaScript(driver, updateButton); 
+    	return this;
     	//updateButton.click();
     }
 

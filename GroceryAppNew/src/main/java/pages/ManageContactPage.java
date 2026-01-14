@@ -41,25 +41,29 @@ public class ManageContactPage {
 		PageFactory.initElements(driver, this);
 	}
 
-	public void manageContact() {
+	public ManageContactPage manageContact() {
 		managecontactmoreinfo.click();
+		return this;
 	}
 
-	public void manageContactEdit() {
+	public ManageContactPage manageContactEdit() {
 		managecontactedit.click();
+		return this;
 	}
 
-	public void updateEmail(String email) {
+	public ManageContactPage updateEmail(String email) {
 		emailField.clear();
 		emailField.sendKeys(email);
+		return this;
 	}
 
-	public void updatePhone(String phone) {
+	public ManageContactPage updatePhone(String phone) {
 		phoneField.clear();
 		phoneField.sendKeys(phone);
+		return this;
 	}
 
-	public void clickUpdateButton() {
+	public ManageContactPage clickUpdateButton() {
 //    	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
 //        wait.until(ExpectedConditions.elementToBeClickable(updateButton)).click();
 //		WaitUtility waitutility = new WaitUtility();
@@ -67,7 +71,8 @@ public class ManageContactPage {
 		//updateButton.click();
     	PageUtility pageutility=new PageUtility();
     	pageutility.scrollUsingJavaScript(driver, updateButton);
-    	pageutility.clickUsingJavaScript(driver, updateButton);    	
+    	pageutility.clickUsingJavaScript(driver, updateButton);  
+    	return this;
 	}
 
 	public boolean isAlertDisplayed() {

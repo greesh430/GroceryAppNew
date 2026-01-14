@@ -7,12 +7,17 @@ import org.testng.annotations.Test;
 
 import constant.Constant;
 import pages.LoginPage;
+import pages.LogoutPage;
 import pages.ManageContactPage;
 import utilities.ExcelUtility;
 
 public class ManageContactTest extends Base {
 
-	@Test
+	LogoutPage logoutpage;
+	ManageContactPage managecontactpage;
+
+	@Test(priority = 1, groups = {
+			"regression" }, retryAnalyzer = retry.Retry.class, description = "Test case to create new contact")
 
 	public void isUserAbleToUpdateContactDetails() throws IOException {
 
@@ -24,27 +29,28 @@ public class ManageContactTest extends Base {
 
 		System.out.println(username);
 		System.out.println(password);
-		
+
 		String phone = ExcelUtility.readIntegerData(1, 0, "ManageContactPage");
 		String email = ExcelUtility.readStringData(1, 1, "ManageContactPage");
 
 		System.out.println(phone);
 		System.out.println(email);
-		
+
 		LoginPage loginpage = new LoginPage(driver);
-		loginpage.enterTheUsername(username);
-		loginpage.enterThePassword(password);
-		loginpage.loginButtonField();
+		loginpage.enterTheUsername(username).enterThePassword(password);
+		//loginpage.enterThePassword(password);
+		//loginpage.loginButtonField();
+		logoutpage = loginpage.loginButtonField();
 
-		ManageContactPage contact = new ManageContactPage(driver);
-		contact.manageContact();
-		contact.manageContactEdit();
-		
-		contact.updatePhone(phone);
-		contact.updateEmail(email);
-		contact.clickUpdateButton();
+		//ManageContactPage contact = new ManageContactPage(driver);
+		managecontactpage = logoutpage.manageContact();
+		managecontactpage.manageContactEdit().updatePhone(phone).updateEmail(email).clickUpdateButton();
 
-		boolean alert = contact.isAlertDisplayed();
+//		contact.updatePhone(phone);
+//		contact.updateEmail(email);
+//		contact.clickUpdateButton();
+
+		boolean alert = managecontactpage.isAlertDisplayed();
 		Assert.assertTrue(alert, Constant.ALERTNOTDISPLAYED);
 
 	}

@@ -14,7 +14,7 @@
       <class name="testscript.LoginTest">  
       <!--<methods>
       <include name="verifyIfUserAbleToLoginUsingValidUsernameValidPassword"></include>
-      </methods> -->
+      </methods>  -->
       </class> 
     </classes>
   </test> <!-- Test -->

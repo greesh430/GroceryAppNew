@@ -22,20 +22,23 @@ public class LoginPage {
 		PageFactory.initElements(driver, this);
 	}
 
-	public void enterTheUsername(String username)
+	public LoginPage enterTheUsername(String username)
 	{
 		usernamefield.sendKeys(username);
+		return this;
 		
 	}
 	
-	public void enterThePassword(String password)
+	public LoginPage enterThePassword(String password)
 	{
 		passwordfield.sendKeys(password);
+		return this;
 	}
 	
-	public void loginButtonField()
+	public LogoutPage loginButtonField()
 	{
 		loginbuttonfield.click();
+		return new LogoutPage(driver);
 	}
 	
 	public boolean isHomePageDisplayed()

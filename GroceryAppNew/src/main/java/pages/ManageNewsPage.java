@@ -26,8 +26,7 @@ public class ManageNewsPage {
 	//@FindBy(xpath = "//textarea[@name='news']")WebElement newsTextField;
 	//@FindBy(xpath = "//button[@name='create']")WebElement saveButton;
 	@FindBy(xpath = "//button[@class='btn btn-danger']")WebElement saveButton;
-	@FindBy(xpath = "//div[contains(@class,'alert-dismissible')]")WebElement alertmsg;
-	
+	@FindBy(xpath = "//div[contains(@class,'alert-dismissible')]")WebElement alertmsg;	
 	
 	
 	public ManageNewsPage(WebDriver driver) 
@@ -36,30 +35,34 @@ public class ManageNewsPage {
 		PageFactory.initElements(driver, this);
 	}
 	
-	public void manageNews()
+	public ManageNewsPage manageNews()
 	{
 		PageUtility pageutility=new PageUtility();
     	pageutility.clickUsingJavaScript(driver, manageNewsMoreinfo); 
 		//manageNewsMoreinfo.click();
+    	return this;
 	}
 	
-	public void clickAddNews() 
+	public ManageNewsPage clickAddNews() 
 	{
 		PageUtility pageutility=new PageUtility();
     	pageutility.clickUsingJavaScript(driver, manageNewsAddMenu); 
 		//addNewNewsButton.click();
+    	return this;
 	}
 	
-	public void enterNewsText(String News) 
+	public ManageNewsPage enterNewsText(String News) 
 	{
 		newsTextField.sendKeys(News);
+		return this;
 	}
 	
-	public void clickSave() 
+	public ManageNewsPage clickSave() 
 	{
 		PageUtility pageutility=new PageUtility();
     	pageutility.clickUsingJavaScript(driver, saveButton); 
 //		saveButton.click();
+    	return this;
 	}
 	
 	public boolean isAlertDisplayed() 
