@@ -53,13 +53,26 @@ public class PageUtility {   //to help page class, creating pageutility class
 		JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("arguments[0].click();", element);
 	}
-	public void scrollUsingJavaScript(WebDriver driver, WebElement element)
+	public void scrollUsingJavaScript(WebDriver driver)
 	{
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollBy(0, 500);");
 
 	}
 	
+	public void actionClassClick(WebDriver driver, WebElement element) 
+	{
+        Actions actions = new Actions(driver);
+        actions.click(element).perform();
+	}
+	
+	public void javaScriptscrollIntoView(WebDriver driver, WebElement element)
+	{
+	
+	JavascriptExecutor js = (JavascriptExecutor) driver;
+	js.executeScript("arguments[0].scrollIntoView(true);", element);
+	
+	}
 }
 
 

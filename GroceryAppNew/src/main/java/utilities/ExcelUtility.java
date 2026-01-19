@@ -33,14 +33,9 @@ public class ExcelUtility {
 		sh = w.getSheet(sheet);
 		XSSFRow r = sh.getRow(row);
 		XSSFCell c = r.getCell(col);
-		int val =   (int) c.getNumericCellValue();  
-		return String.valueOf(val);   
-		
-	
+		int val = (int) c.getNumericCellValue();
+		return String.valueOf(val);
+
 	}
 
 }
-
-
-
-

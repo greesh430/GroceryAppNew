@@ -30,10 +30,10 @@ public class AdminUserTest extends Base {
 
 		LoginPage loginpage = new LoginPage(driver);
 		loginpage.enterTheUsername(username).enterThePassword(password);
-		//loginpage.enterThePassword(password);
+		// loginpage.enterThePassword(password);
 		logoutpage = loginpage.loginButtonField();
 
-		//AdminUserPage adminuser = new AdminUserPage(driver);
+		// AdminUserPage adminuser = new AdminUserPage(driver);
 		FakerUtility fakerutility = new FakerUtility();
 		String uname = fakerutility.createARandomFirstname() + LocalDateTime.now();
 		String pwrd = fakerutility.createARandomLastName();
@@ -46,7 +46,7 @@ public class AdminUserTest extends Base {
 //        adminuserpage.saveButtonClick();
 
 		boolean alert = adminuserpage.isAlertDisplayed();
-		Assert.assertTrue(alert, Constant.ALERTNOTDISPLAYED);
+		Assert.assertTrue(alert, Constant.ADMINUSERS_ERRORMESSAGE);
 
 	}
 

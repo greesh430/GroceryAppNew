@@ -64,7 +64,7 @@ public class Base {
 		driver.manage().window().maximize();
 	}
 	
-	@AfterMethod(alwaysRun=true)
+	//@AfterMethod(alwaysRun=true)
 //	public void browserCloseAndQuit() {
 //		//driver.close();
 //		driver.quit();

@@ -1,6 +1,5 @@
 package generatereport;
 
-
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
@@ -12,8 +11,8 @@ import com.aventstack.extentreports.Status;
 
 import utilities.ExtendReportUtility;
 
-public class Listeners implements ITestListener{
-	
+public class Listeners implements ITestListener {
+
 	ExtentTest test;
 
 	ExtentReports extent = ExtendReportUtility.createExtentReports();
@@ -33,6 +32,7 @@ public class Listeners implements ITestListener{
 		extentTest.get().log(Status.PASS, "Test Passed");
 
 	}
+
 	public void onTestFailure(ITestResult result) {
 
 		ITestListener.super.onTestFailure(result);
@@ -63,7 +63,8 @@ public class Listeners implements ITestListener{
 		} catch (Exception e) {
 		}
 	}
-public void onTestSkipped(ITestResult result) {
+
+	public void onTestSkipped(ITestResult result) {
 		ITestListener.super.onTestSkipped(result);
 		extentTest.get().log(Status.SKIP, "Test Skipped");
 		String testMethodName = result.getMethod().getMethodName();
@@ -74,7 +75,8 @@ public void onTestSkipped(ITestResult result) {
 
 		ITestListener.super.onTestFailedButWithinSuccessPercentage(result);
 	}
-public void onTestFailedWithTimeout(ITestResult result) {
+
+	public void onTestFailedWithTimeout(ITestResult result) {
 
 		ITestListener.super.onTestFailedWithTimeout(result);
 	}
@@ -91,4 +93,3 @@ public void onTestFailedWithTimeout(ITestResult result) {
 	}
 
 }
-

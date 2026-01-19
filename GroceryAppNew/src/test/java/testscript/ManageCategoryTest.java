@@ -17,7 +17,8 @@ public class ManageCategoryTest extends Base {
 	LogoutPage logoutpage;
 	ManageCategoryPage managecategorypage;
 
-	@Test(priority = 1, groups = { "regression" }, retryAnalyzer = retry.Retry.class, description="Test case to create new category")
+	@Test(priority = 1, groups = {
+			"regression" }, retryAnalyzer = retry.Retry.class, description = "Test case to create new category")
 
 	public void isUserAbleToManageCategory() throws IOException, AWTException {
 
@@ -42,7 +43,7 @@ public class ManageCategoryTest extends Base {
 //		category.enterCategoryName(FruitsCategory);
 //		category.enterSave();
 		boolean alert = managecategorypage.isAlertDisplayed();
-		Assert.assertTrue(alert, Constant.ALERTNOTDISPLAYED);
+		Assert.assertTrue(alert, Constant.MANAGECATEGORY_ERRORMESSAGE);
 	}
 
 }

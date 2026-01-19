@@ -32,18 +32,18 @@ public class ManageNewsTest extends Base {
 
 		LoginPage loginpage = new LoginPage(driver);
 		loginpage.enterTheUsername(username).enterThePassword(password);
-		//loginpage.enterThePassword(password);
-		//loginpage.loginButtonField();
+		// loginpage.enterThePassword(password);
+		// loginpage.loginButtonField();
 		logoutpage = loginpage.loginButtonField();
 
-		//ManageNewsPage newspage=new ManageNewsPage(driver);
+		// ManageNewsPage newspage=new ManageNewsPage(driver);
 		managenewspage = logoutpage.manageNews();
 		managenewspage.clickAddNews().enterNewsText(News).clickSave();
 //		newspage.enterNewsText(News);
 //		newspage.clickSave();
 
 		boolean alert = managenewspage.isAlertDisplayed();
-		Assert.assertTrue(alert, Constant.ALERTNOTDISPLAYED);
+		Assert.assertTrue(alert, Constant.MANAGENEWS_ERRORMESSAGE);
 
 	}
 

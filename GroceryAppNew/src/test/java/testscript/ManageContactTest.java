@@ -38,11 +38,11 @@ public class ManageContactTest extends Base {
 
 		LoginPage loginpage = new LoginPage(driver);
 		loginpage.enterTheUsername(username).enterThePassword(password);
-		//loginpage.enterThePassword(password);
-		//loginpage.loginButtonField();
+		// loginpage.enterThePassword(password);
+		// loginpage.loginButtonField();
 		logoutpage = loginpage.loginButtonField();
 
-		//ManageContactPage contact = new ManageContactPage(driver);
+		// ManageContactPage contact = new ManageContactPage(driver);
 		managecontactpage = logoutpage.manageContact();
 		managecontactpage.manageContactEdit().updatePhone(phone).updateEmail(email).clickUpdateButton();
 
@@ -51,7 +51,7 @@ public class ManageContactTest extends Base {
 //		contact.clickUpdateButton();
 
 		boolean alert = managecontactpage.isAlertDisplayed();
-		Assert.assertTrue(alert, Constant.ALERTNOTDISPLAYED);
+		Assert.assertTrue(alert, Constant.MANAGECONTACT_ERRORMESSAGE);
 
 	}
 

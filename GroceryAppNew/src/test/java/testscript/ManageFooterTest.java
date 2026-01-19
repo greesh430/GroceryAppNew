@@ -31,11 +31,11 @@ public class ManageFooterTest extends Base {
 
 		LoginPage loginpage = new LoginPage(driver);
 		loginpage.enterTheUsername(username).enterThePassword(password);
-		//loginpage.enterThePassword(password);
-		//loginpage.loginButtonField();
+		// loginpage.enterThePassword(password);
+		// loginpage.loginButtonField();
 		logoutpage = loginpage.loginButtonField();
 
-		//ManageFooterPage footer = new ManageFooterPage(driver);
+		// ManageFooterPage footer = new ManageFooterPage(driver);
 		managefooterpage = logoutpage.manageFooterMoreInfo();
 		managefooterpage.manageFooterEdit().updateEmail(email).updatePhone(phone).clickUpdateButton();
 //        footer.updateEmail(phone);
@@ -43,7 +43,7 @@ public class ManageFooterTest extends Base {
 //        footer.clickUpdateButton();
 
 		boolean alert = managefooterpage.isAlertDisplayed();
-		Assert.assertTrue(alert, Constant.ALERTNOTDISPLAYED);
+		Assert.assertTrue(alert, Constant.MANAGEFOOTER_ERRORMESSAGE);
 
 	}
 
